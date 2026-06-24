@@ -1,152 +1,314 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>  Portafolio   |   Jorge Cisneros </title>
-<style>
-:root{
---bg:#0f172a;
---bg2:#0c4a6e;
---text:#ffffff;
---card:rgba(255,255,255,.05);
---muted:#cbd5e1;
---primary:#2563eb;
-}
-body.light{
---bg:#f8fafc;
---bg2:#e2e8f0;
---text:#0f172a;
---card:#ffffff;
---muted:#475569;
-}
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-html{scroll-behavior:smooth}
-body{
-background:linear-gradient(135deg,var(--bg),#1e293b,var(--bg2));
-color:var(--text);
-line-height:1.6;
-transition:.3s;
-}
-.container{width:90%;max-width:1200px;margin:auto;}
-nav{
-position:sticky;top:0;z-index:1000;
-display:flex;justify-content:space-between;align-items:center;
-padding:18px 5%;
-background:rgba(15,23,42,.75);
-backdrop-filter:blur(10px);
-}
-nav a{color:white;text-decoration:none;margin-left:20px;}
-body.light nav a{color:#0f172a;}
-.logo{font-size:1.3rem;font-weight:bold;}
-.theme-btn{
-border:none;padding:10px 15px;border-radius:10px;cursor:pointer;
-background:var(--primary);color:white;
-}
-.hero{min-height:90vh;display:flex;align-items:center;justify-content:space-between;gap:50px;}
-.hero-text h1{font-size:4rem;margin:20px 0;}
-.hero-text p{color:var(--muted);max-width:600px;}
-.badge{display:inline-block;background:rgba(59,130,246,.2);padding:10px 20px;border-radius:30px;}
-.buttons{margin-top:30px;display:flex;gap:15px;flex-wrap:wrap;}
-.btn{text-decoration:none;padding:14px 28px;border-radius:15px;transition:.3s;color:white;}
-.btn-primary{background:var(--primary);}
-.btn-outline{border:1px solid #64748b;color:var(--text);}
-.avatar{width:280px;height:280px;border-radius:50%;background:linear-gradient(45deg,#3b82f6,#22d3ee);padding:5px;display:flex;align-items:center;justify-content:center;}
-.avatar span{width:100%;height:100%;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:5rem;font-weight:bold;}
-.stats,.projects,.skills,.contact{padding:80px 0;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
-.card{background:var(--card);padding:25px;border-radius:24px;backdrop-filter:blur(10px);transition:.3s;}
-.card:hover{transform:translateY(-5px);}
-.section-title{font-size:2.5rem;margin-bottom:40px;text-align:center;}
-.skill{display:flex;justify-content:space-between;align-items:center;margin:12px 0;}
-.progress{height:8px;background:#334155;border-radius:10px;overflow:hidden;margin-top:6px;}
-.progress span{display:block;height:100%;background:#3b82f6;}
-.contact{text-align:center;}
-footer{text-align:center;padding:20px;color:var(--muted);}
-@media(max-width:768px){
-.hero{flex-direction:column;text-align:center;padding:60px 0;}
-.hero-text h1{font-size:3rem;}
-nav{flex-wrap:wrap;gap:10px;}
-}
-</style>
-</head>
-<body>
-<nav>
-<div class="logo">Portafolio | Jorge Cisneros</div>
-<div>
-<a href="#inicio">Inicio</a>&nbsp;&nbsp;&nbsp;|&nbsp;
-<a href="#proyectos">Proyectos</a>&nbsp;&nbsp;&nbsp;|&nbsp;
-<a href="#habilidades">Habilidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;
-<a href="#contacto">Contacto</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button class="theme-btn" onclick="toggleTheme()">🌙/☀️</button>
-</div>
-</nav>
-<div class="container">
-<section id="inicio" class="hero">
-<div class="hero-text">
-<span class="badge" style="padding: 10px;">Bienvenido a mi portafolio</span>
-<h1>Jorge Cisneros</h1>
-<p>Docente, desarrollador y apasionado por la educación, la tecnología y la innovación digital.</p>
-<div class="buttons">
-https://github.com
-<a href="#proyectos" class="btn btn-outline">Ver Proyectos</a>
-</div>
-</div>
-<div class="avatar"><span>JC</span></div>
-</section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio | Jorge Cisneros</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --bg2: #0c4a6e;
+        --text: #ffffff;
+        --card: rgba(255, 255, 255, 0.05);
+        --muted: #cbd5e1;
+        --primary: #2563eb;
+      }
+      body.light {
+        --bg: #f8fafc;
+        --bg2: #e2e8f0;
+        --text: #0f172a;
+        --card: #ffffff;
+        --muted: #475569;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: linear-gradient(135deg, var(--bg), #1e293b, var(--bg2));
+        color: var(--text);
+        line-height: 1.6;
+        transition: 0.3s;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 5%;
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(10px);
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+      body.light nav a {
+        color: #0f172a;
+      }
+      .logo {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      .theme-btn {
+        border: none;
+        padding: 10px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        background: var(--primary);
+        color: white;
+      }
+      .hero {
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+      }
+      .hero-text h1 {
+        font-size: 4rem;
+        margin: 20px 0;
+      }
+      .hero-text p {
+        color: var(--muted);
+        max-width: 600px;
+      }
+      .badge {
+        display: inline-block;
+        background: rgba(59, 130, 246, 0.2);
+        padding: 10px 20px;
+        border-radius: 30px;
+      }
+      .buttons {
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 15px;
+        transition: 0.3s;
+        color: white;
+      }
+      .btn-primary {
+        background: var(--primary);
+      }
+      .btn-outline {
+        border: 1px solid #64748b;
+        color: var(--text);
+      }
+      .avatar {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #3b82f6, #22d3ee);
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .avatar span {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        font-weight: bold;
+      }
+      .stats,
+      .projects,
+      .skills,
+      .contact {
+        padding: 80px 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+      .card {
+        background: var(--card);
+        padding: 25px;
+        border-radius: 24px;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .skill {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 12px 0;
+      }
+      .progress {
+        height: 8px;
+        background: #334155;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 6px;
+      }
+      .progress span {
+        display: block;
+        height: 100%;
+        background: #3b82f6;
+      }
+      .contact {
+        text-align: center;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: var(--muted);
+      }
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding: 60px 0;
+        }
+        .hero-text h1 {
+          font-size: 3rem;
+        }
+        nav {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Portafolio | Jorge Cisneros</div>
+      <div>
+        <a href="#inicio">Inicio</a>&nbsp;&nbsp;&nbsp;|&nbsp;
+        <a href="#proyectos">Proyectos</a>&nbsp;&nbsp;&nbsp;|&nbsp;
+        <a href="#habilidades">Habilidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;
+        <a href="#contacto">Contacto</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="theme-btn" onclick="toggleTheme()">🌙/☀️</button>
+      </div>
+    </nav>
+    <div class="container">
+      <section id="inicio" class="hero">
+        <div class="hero-text">
+          <span class="badge" style="margin: 20px"
+            >Bienvenido a mi portafolio</span
+          >
+          <h1>Jorge Cisneros</h1>
+          <p>
+            Docente, desarrollador y apasionado por la educación, la tecnología
+            y la innovación digital.
+          </p>
+          <div class="buttons">
+            https://github.com
+            <a href="#proyectos" class="btn btn-outline">Ver Proyectos</a>
+          </div>
+        </div>
+        <div class="avatar"><span>JC</span></div>
+      </section>
 
-<section class="stats">
-<div class="grid">
-<div class="card"><h2>10+</h2><p>Proyectos realizados</p></div>
-<div class="card"><h2>5+</h2><p>Años de experiencia</p></div>
-<div class="card"><h2>100%</h2><p>Compromiso y aprendizaje</p></div>
-</div>
-</section>
+      <section class="stats">
+        <div class="grid">
+          <div class="card">
+            <h2>10+</h2>
+            <p>Proyectos realizados</p>
+          </div>
+          <div class="card">
+            <h2>5+</h2>
+            <p>Años de experiencia</p>
+          </div>
+          <div class="card">
+            <h2>100%</h2>
+            <p>Compromiso y aprendizaje</p>
+          </div>
+        </div>
+      </section>
 
-<section id="habilidades" class="skills">
-<h2 class="section-title">Habilidades y Tecnologías</h2>
-<div class="grid">
-<div class="card">
-<h3>🚀 Tecnologías</h3><br>
-<p>🌐 HTML5 &nbsp; 🎨 CSS3 &nbsp; ⚡ JavaScript</p><br>
-<p>🐍 Python &nbsp; 🔧 Git &nbsp; ☁️ GitHub</p><br>
-<p>📊 Power BI &nbsp; 🗄️ SQL &nbsp; 🎓 EdTech</p>
-</div>
-<div class="card">
-<div class="skill">HTML/CSS <strong>95%</strong></div>
-<div class="progress"><span style="width:95%"></span></div>
-<div class="skill">JavaScript <strong>85%</strong></div>
-<div class="progress"><span style="width:85%"></span></div>
-<div class="skill">Python <strong>90%</strong></div>
-<div class="progress"><span style="width:90%"></span></div>
-<div class="skill">Tecnología Educativa <strong>98%</strong></div>
-<div class="progress"><span style="width:98%"></span></div>
-</div>
-</div>
-</section>
+      <section id="habilidades" class="skills">
+        <h2 class="section-title">Habilidades y Tecnologías</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>🚀 Tecnologías</h3>
+            <br />
+            <p>🌐 HTML5 &nbsp; 🎨 CSS3 &nbsp; ⚡ JavaScript</p>
+            <br />
+            <p>🐍 Python &nbsp; 🔧 Git &nbsp; ☁️ GitHub</p>
+            <br />
+            <p>📊 Power BI &nbsp; 🗄️ SQL &nbsp; 🎓 EdTech</p>
+          </div>
+          <div class="card">
+            <div class="skill">HTML/CSS <strong>95%</strong></div>
+            <div class="progress"><span style="width: 95%"></span></div>
+            <div class="skill">JavaScript <strong>85%</strong></div>
+            <div class="progress"><span style="width: 85%"></span></div>
+            <div class="skill">Python <strong>90%</strong></div>
+            <div class="progress"><span style="width: 90%"></span></div>
+            <div class="skill">Tecnología Educativa <strong>98%</strong></div>
+            <div class="progress"><span style="width: 98%"></span></div>
+          </div>
+        </div>
+      </section>
 
-<section id="proyectos" class="projects">
-<h2 class="section-title">Proyectos Destacados</h2>
-<div class="grid">
-<div class="card"><h3>Sistema Académico</h3><p>Plataforma para gestión educativa y seguimiento estudiantil.</p></div>
-<div class="card"><h3>Dashboard de Datos</h3><p>Visualización interactiva de indicadores y métricas.</p></div>
-<div class="card"><h3>App de Productividad</h3><p>Herramienta para organización de tareas y proyectos.</p></div>
-</div>
-</section>
+      <section id="proyectos" class="projects">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Sistema Académico</h3>
+            <p>Plataforma para gestión educativa y seguimiento estudiantil.</p>
+          </div>
+          <div class="card">
+            <h3>Dashboard de Datos</h3>
+            <p>Visualización interactiva de indicadores y métricas.</p>
+          </div>
+          <div class="card">
+            <h3>App de Productividad</h3>
+            <p>Herramienta para organización de tareas y proyectos.</p>
+          </div>
+        </div>
+      </section>
 
-<section id="contacto" class="contact">
-<h2 class="section-title">¿Trabajamos juntos?</h2>
-<p>Estoy interesado en proyectos educativos, tecnológicos y de innovación.</p>
-<br/><br/>
-<a href="mailto:correo@ejemplo.com" class="btn btn-primary">Contactarme</a>
-</section>
-</div>
+      <section id="contacto" class="contact">
+        <h2 class="section-title">¿Trabajamos juntos?</h2>
+        <p>
+          Estoy interesado en proyectos educativos, tecnológicos y de
+          innovación.
+        </p>
+        <br /><br />
+        <a href="https://linkedin.com/in/jorge-cisneros-86074830a" class="btn btn-primary"
+          >Contactarme</a
+        >
+      </section>
+    </div>
 
-<footer>© 2026 Jorge Cisneros - Todos los derechos reservados.</footer>
-<script>
-function toggleTheme(){
- document.body.classList.toggle('light');
-}
-</script>
-</body>
+    <footer>© 2026 Jorge Cisneros - Todos los derechos reservados.</footer>
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle("light");
+      }
+    </script>
+  </body>
+</html>
